@@ -12,17 +12,19 @@
 <body>
 
 <?php
-  include('db.php');
 
-  $query = "SELECT * FROM users_table";
+  try{
 
-  $result = $db->query($query);
+    include('db.php');
+    $query = "SELECT * FROM users_table";
 
-  //  while($row = $result->fetchArray()){
-  //      echo "<pre>";
-  //      print_r($row);
-  //      echo"</pre>";
-  //  }
+    $result = $db->query($query);
+
+
+  }catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+  }
+
 ?>
 
 <div class="container bg-info">
